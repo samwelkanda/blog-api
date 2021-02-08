@@ -6,8 +6,8 @@ name = "pypi"
 [packages]
 fastapi = "*"
 uvicorn = {extras = ["standard"], version = "*"}
+sqlalchemy = "*"
 
 [dev-packages]
 flake8 = "*"
 pytest = "==5.4.3"
-

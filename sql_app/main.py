@@ -31,25 +31,25 @@ def get_item(item_id: int, q: Optional[str] = None):
 def get_posts(skip: int = 0, limit: int = 50, db: Session = Depends(get_db)):
     return crud.get_posts(db=db, skip=skip, limit=limit)
 
-@app.post("/posts", response_model = schemas.Post, status_code=201):
-def create_post(post: schemas.CreatePost, db: Session = Depends(get_db)):
+@app.post("/posts", response_model = schemas.Post, status_code=201)
+def create_post(post: schemas.PostCreate, db: Session = Depends(get_db)):
     return crud.create_post(db=db, post=post)
 
 @app.get("/posts/{post_id}", response_model = schemas.Post)
 def get_post(post_id: int, db: Session = Depends(get_db)):
-    item = crud.get_post(db=db, id=post_id)
+    item = crud.get_post(db=db, post_id=post_id)
     if item is None:
         raise HTTPException(status_code=404, detail="Post not found.")
     return item
 
 @app.put("/posts/{post_id}")
-async def replace_post(post_id: int, post: schemas.CreatePost, db: Session = Depends(get_db)):
+async def replace_post(post_id: int, post: schemas.PostCreate, db: Session = Depends(get_db)):
     return crud.update_post(db=db, post_id=post_id, post=post)
 
 @app.patch("/posts/{post_id}")
-async def update_post(post_id: int, post: schemas.CreatePost, db: Session = Depends(get_db)):
+async def update_post(post_id: int, post: schemas.PostCreate, db: Session = Depends(get_db)):
     return crud.update_post(db=db, post_id=post_id, post=post)
 
-@app.delete("/posts/{post_id}", status_code=204)
+@app.delete("/posts/{post_id}")
 async def delete_post(post_id: int, db: Session = Depends(get_db)):
     return crud.delete_post(db=db, post_id=post_id)
