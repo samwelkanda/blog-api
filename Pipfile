@@ -11,3 +11,5 @@ sqlalchemy = "*"
 [dev-packages]
 flake8 = "*"
 pytest = "==5.4.3"
+isort = "*"
+yapf = "*"
