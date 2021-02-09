@@ -5,9 +5,9 @@ from requests.packages.urllib3.response import HTTPResponse
 
 
 class MiddlewareHTTPAdapter(HTTPAdapter):
-    """An HTTPAdapter onto which :class:`BaseMiddleware <BaseMiddleware>`
-    can be registered. Middleware methods are called in the order of
-    registration. Note: contrib that expose actions called during adapter
+    """An HTTPAdapter onto which :class:`BaseMiddleware <BaseMiddleware>`can be registered. 
+    Middleware methods are called in the order of registration. 
+    Note: contrib that expose actions called during adapter
     initialization must be passed to `__init__` rather than `register`, else
     those actions will not take effect.
     :param list middlewares: List of :class:`BaseMiddleware <BaseMiddleware>`

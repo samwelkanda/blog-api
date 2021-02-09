@@ -69,7 +69,7 @@ instance/
 .scrapy
 
 # SQLite DB
-.db
+sql_app.db
 
 # Sphinx documentation
 docs/_build/
