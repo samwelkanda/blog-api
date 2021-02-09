@@ -8,14 +8,14 @@ repos:
         name: isort
         stages: [commit]
         language: system
-        entry: pipenv run isort
+        entry: pipenv run isort .
         types: [python]
 
       - id: yapf
         name: yapf
         stages: [commit]
         language: system
-        entry: pipenv run yapf -ir
+        entry: pipenv run yapf -ir .
         types: [python]
 
       - id: mypy
@@ -30,5 +30,5 @@ repos:
         name: pytest
         stages: [commit]
         language: system
-        entry: pipenv run pytest
+        entry: pipenv run pytest .
         types: [python]

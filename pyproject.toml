@@ -7,4 +7,4 @@ testpaths = [
 
 [tool.isort]
 profile = "hug"
-src_paths = ["sql_app", "tests"]
+src_paths = ["isort", "test"]
