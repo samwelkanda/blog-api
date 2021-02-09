@@ -27,7 +27,7 @@ jobs:
       - name: Run formatter, linter and tests
         run: |
           pipenv install --dev
-          pipenv run isort
+          pipenv run isort .
           pipenv run yapf
           pipenv run mypy
           pipenv run pytest
