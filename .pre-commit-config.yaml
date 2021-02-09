@@ -15,7 +15,7 @@ repos:
         name: yapf
         stages: [commit]
         language: system
-        entry: pipenv run yapf
+        entry: pipenv run yapf -ir .
         types: [python]
 
       - id: mypy
