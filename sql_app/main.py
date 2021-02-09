@@ -25,14 +25,12 @@ def read_root():
 
 
 @app.get("/items/{item_id}")
-def get_item(item_id: int, 
-        q: Optional[str] = None):
+def get_item(item_id: int, q: Optional[str] = None):
     return {"item_id": item_id, "q": q}
 
 
 @app.get("/posts", response_model=List[schemas.Post])
-def get_posts(skip: int = 0, limit: int = 50, 
-            db: Session = Depends(get_db)):
+def get_posts(skip: int = 0, limit: int = 50, db: Session = Depends(get_db)):
     return crud.get_posts(db=db, skip=skip, limit=limit)
 
 
