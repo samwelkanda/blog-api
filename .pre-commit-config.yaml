@@ -1,3 +1,6 @@
+default_language_version:
+    python: python3
+
 repos:
   - repo: local
     hooks:
@@ -5,21 +8,21 @@ repos:
         name: isort
         stages: [commit]
         language: system
-        entry: pipenv run isort .
+        entry: pipenv run isort
         types: [python]
 
       - id: yapf
         name: yapf
         stages: [commit]
         language: system
-        entry: pipenv run yapf -ir .
+        entry: pipenv run yapf
         types: [python]
 
       - id: mypy
         name: mypy
         stages: [commit]
         language: system
-        entry: pipenv run mypy .
+        entry: pipenv run mypy
         types: [python]
         pass_filenames: false
 
