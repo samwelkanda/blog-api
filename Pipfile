@@ -8,11 +8,12 @@ fastapi = "*"
 uvicorn = {extras = ["standard"], version = "*"}
 sqlalchemy = "*"
 requests = "*"
+yapf = "*"
 
 [dev-packages]
 flake8 = "*"
 pytest = "==5.4.3"
 isort = "*"
-yapf = "*"
 mypy = "*"
 pre-commit = "*"
+tox = "*"

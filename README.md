@@ -25,6 +25,7 @@ $ pipenv run uvicorn sql_app.main:app --reload
 ### Check it
 
 Open your browser at `http://127.0.0.1:8000/docs` to view the the automatic interactive API documentation (provided by Swagger UI)
+
 And now, go to `http://127.0.0.1:8000/redoc`. You will see the alternative automatic documentation (provided by ReDoc):
 
 ![alt text](img/docs.png)

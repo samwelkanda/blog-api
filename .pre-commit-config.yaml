@@ -11,13 +11,6 @@ repos:
         entry: pipenv run isort .
         types: [python]
 
-      - id: yapf
-        name: yapf
-        stages: [commit]
-        language: system
-        entry: pipenv run yapf -ir .
-        types: [python]
-
       - id: mypy
         name: mypy
         stages: [commit]
